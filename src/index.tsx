@@ -3,7 +3,7 @@ import loadCss from './load-css';
 import React from 'react';
 import { createRoot } from 'react-dom/client';
 import App from './App';
-import { getSortedResults, updateResults } from './sort-results';
+import { getSortedResults, updateResults } from './results-utils';
 
 loadCss();
 

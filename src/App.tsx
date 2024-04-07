@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { getSortedResults, updateResults } from './sort-results';
+import { getSortedResults, updateResults } from './results-utils';
 
 export default () => {
   const [search, setSearch] = useState('');
@@ -12,10 +12,9 @@ export default () => {
   const onSubmit = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key !== 'Enter') return;
 
-    const filteredResults = results.filter((result: HTMLElement) => {
-      const productTitle = result.querySelector('[data-cy="title-recipe"]')?.textContent || '';
+    const filteredResults = results.filter(({ title }: HTMLElement) => {
       const searchRegex = new RegExp((search as string).toLowerCase().trim(), 'ims');
-      return searchRegex.test(productTitle.toLowerCase().trim());
+      return searchRegex.test(title.toLowerCase().trim());
     });
 
     updateResults(results, filteredResults);
