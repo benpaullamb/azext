@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { getSortedResults, updateResults } from './results-utils';
 import AveragePrice from './AveragePrice';
+import CommonWords from './CommonWords';
 
 export default () => {
   const [search, setSearch] = useState('');
@@ -22,14 +23,15 @@ export default () => {
   };
 
   return (
-    <div>
+    <div className="mb-4 flex flex-col gap-2">
       <AveragePrice results={results} />
+      <CommonWords results={results} />
 
       <input
         value={search}
         onChange={(e) => setSearch(e.target.value)}
         onKeyDown={onSubmit}
-        className="w-full px-2 py-1 mb-4 border border-[#BBBFBF] rounded"
+        className="w-full px-2 py-1 border border-[#BBBFBF] rounded"
         placeholder="Search..."
       />
     </div>

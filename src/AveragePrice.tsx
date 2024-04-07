@@ -13,7 +13,7 @@ export default ({ results }: Props) => {
   }, [results]);
 
   return (
-    <span className="block mb-2 text-base">
+    <span className="block text-base">
       Average Price: <span className="text-lg font-bold">£{averagePrice}</span>
     </span>
   );
