@@ -1,4 +1,4 @@
-interface Result {
+export interface Result {
   element: HTMLElement;
   rating: number;
   price: number;

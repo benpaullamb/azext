@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { getSortedResults, updateResults } from './results-utils';
+import AveragePrice from './AveragePrice';
 
 export default () => {
   const [search, setSearch] = useState('');
@@ -21,12 +22,16 @@ export default () => {
   };
 
   return (
-    <input
-      value={search}
-      onChange={(e) => setSearch(e.target.value)}
-      onKeyDown={onSubmit}
-      className="w-full px-2 py-1 mb-4 border border-[#BBBFBF] rounded"
-      placeholder="Search..."
-    />
+    <div>
+      <AveragePrice results={results} />
+
+      <input
+        value={search}
+        onChange={(e) => setSearch(e.target.value)}
+        onKeyDown={onSubmit}
+        className="w-full px-2 py-1 mb-4 border border-[#BBBFBF] rounded"
+        placeholder="Search..."
+      />
+    </div>
   );
 };
