@@ -1,0 +1,19 @@
+{
+  "manifest_version": 3,
+  "name": "Azext",
+  "version": "4.0.0",
+  "description": "Amazon Chrome extension",
+  "permissions": ["activeTab"],
+  "content_scripts": [
+    {
+      "matches": ["https://www.amazon.co.uk/s*"],
+      "js": ["content-script.js"]
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["content-script.css"],
+      "matches": ["https://www.amazon.co.uk/*"]
+    }
+  ]
+}
