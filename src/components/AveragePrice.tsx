@@ -1,5 +1,5 @@
 import React, { useMemo } from 'react';
-import { Result } from './results-utils';
+import { Result } from '../results-utils';
 
 interface Props {
   results: Result[];

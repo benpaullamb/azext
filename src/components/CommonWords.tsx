@@ -1,5 +1,5 @@
 import React, { useMemo } from 'react';
-import { Result, getCommonWords } from './results-utils';
+import { Result, getCommonWords } from '../results-utils';
 
 interface Props {
   results: Result[];

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Result, updateResults } from './results-utils';
+import { Result, updateResults } from '../results-utils';
 
 interface Props {
   results: Result[];

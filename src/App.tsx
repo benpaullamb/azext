@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { getSortedResults } from './results-utils';
-import AveragePrice from './AveragePrice';
-import CommonWords from './CommonWords';
-import SearchBar from './SearchBar';
+import AveragePrice from './components/AveragePrice';
+import CommonWords from './components/CommonWords';
+import SearchBar from './components/SearchBar';
 
 export default () => {
   const [results, setResults] = useState<HTMLElement[]>([]);
