@@ -13,9 +13,9 @@ export default () => {
     if (e.key !== 'Enter') return;
 
     const filteredResults = results.filter((result: HTMLElement) => {
-      const productTitle = result.querySelector('[data-cy="title-recipe"]')?.textContent;
-      const searchText = (search as string).toLowerCase().trim();
-      return productTitle?.toLowerCase().trim().includes(searchText);
+      const productTitle = result.querySelector('[data-cy="title-recipe"]')?.textContent || '';
+      const searchRegex = new RegExp((search as string).toLowerCase().trim(), 'ims');
+      return searchRegex.test(productTitle.toLowerCase().trim());
     });
 
     updateResults(results, filteredResults);
