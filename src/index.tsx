@@ -1,12 +1,13 @@
 import './styles.css';
+import loadCss from './load-css';
 import React from 'react';
 import { createRoot } from 'react-dom/client';
-import loadCss from './load-css';
 import App from './App';
 import { getSortedResults, updateResults } from './sort-results';
 
-updateResults([], getSortedResults());
 loadCss();
+
+updateResults([], getSortedResults());
 
 const resultsTitle = document.querySelector('[data-index="1"]');
 const container = document.createElement('div');
