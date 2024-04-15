@@ -24,7 +24,7 @@ export default ({ results }: Props) => {
       value={search}
       onChange={(e) => setSearch(e.target.value)}
       onKeyDown={onSubmit}
-      className="w-1/2 px-2 py-1 border border-[#BBBFBF] rounded"
+      className="w-full px-2 py-1 border border-[#BBBFBF] rounded"
       placeholder="Search..."
     />
   );
