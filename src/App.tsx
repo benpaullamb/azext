@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { getSortedResults, updateResults } from './results-utils';
+import { initAmazonResults } from './results-utils';
 import AveragePrice from './components/AveragePrice';
 import CommonWords from './components/CommonWords';
 import SearchBar from './components/SearchBar';
@@ -12,22 +12,18 @@ export default () => {
   }, []);
 
   const load = () => {
-    const newResults = getSortedResults();
-    setResults(newResults);
-    updateResults([], newResults);
+    setResults(initAmazonResults());
   };
 
   return (
     <div id="azext">
       <div className="mb-4 flex flex-col gap-2">
+        <button onClick={load} className="w-fit px-4 py-1 border border-[#BBBFBF] rounded">
+          Reload
+        </button>
         <AveragePrice results={results} />
         <CommonWords results={results} />
-        <div className="flex gap-2 items-center">
-          <SearchBar results={results} />
-          <button onClick={load} className="px-4 py-1 border border-[#BBBFBF] rounded">
-            Reload
-          </button>
-        </div>
+        <SearchBar results={results} />
       </div>
     </div>
   );

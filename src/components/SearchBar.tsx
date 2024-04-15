@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Result, updateResults } from '../results-utils';
+import { Result, setAmazonResults } from '../results-utils';
 
 interface Props {
   results: Result[];
@@ -16,7 +16,7 @@ export default ({ results }: Props) => {
       return searchRegex.test(title.toLowerCase().trim());
     });
 
-    updateResults(results, filteredResults);
+    setAmazonResults(results, filteredResults);
   };
 
   return (

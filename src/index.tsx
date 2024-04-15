@@ -3,11 +3,11 @@ import loadCss from './load-css';
 import React from 'react';
 import { createRoot } from 'react-dom/client';
 import App from './App';
-import { getSortedResults, updateResults } from './results-utils';
+import { initAmazonResults } from './results-utils';
 
 loadCss();
 
-updateResults([], getSortedResults());
+initAmazonResults();
 
 const resultsTitle = document.querySelector('[data-index="1"]');
 const container = document.createElement('div');

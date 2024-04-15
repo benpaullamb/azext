@@ -7,6 +7,8 @@ interface Props {
 }
 
 export default ({ results }: Props) => {
+  const count = 10;
+
   const commonWords = useMemo(() => {
     if (!results.length) return [];
 
@@ -30,7 +32,7 @@ export default ({ results }: Props) => {
 
     const sortedWords = Array.from(wordCounts.entries())
       .sort(([_a, countA], [_b, countB]) => countB - countA)
-      .slice(0, 20)
+      .slice(0, count)
       .map(([word]) => word);
 
     return sortedWords;
