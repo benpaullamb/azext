@@ -18,14 +18,16 @@ export default () => {
   };
 
   return (
-    <div className="mb-4 flex flex-col gap-2">
-      <AveragePrice results={results} />
-      <CommonWords results={results} />
-      <div className="flex gap-2 items-center">
-        <SearchBar results={results} />
-        <button onClick={load} className="px-4 py-1 border border-[#BBBFBF] rounded">
-          Reload
-        </button>
+    <div id="azext">
+      <div className="mb-4 flex flex-col gap-2">
+        <AveragePrice results={results} />
+        <CommonWords results={results} />
+        <div className="flex gap-2 items-center">
+          <SearchBar results={results} />
+          <button onClick={load} className="px-4 py-1 border border-[#BBBFBF] rounded">
+            Reload
+          </button>
+        </div>
       </div>
     </div>
   );
